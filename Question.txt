@@ -1,0 +1,98 @@
+Task :Create a simple food ordering system using object-oriented programming principles in Python. The system should include functionalities for managing users, food items, orders, and order items. You are required to implement the following classes:
+
+User:
+
+Attributes:
+username: The username of the user.
+password: The password of the user.
+orders: A list to store the orders placed by the user.
+Methods:
+__init__(self, username, password): Constructor to initialize the username, password, and orders list.
+set_password(self, password): Method to update the password.
+check_password(self, password): Method to check if the provided password matches the user's password.
+FoodItem:
+
+Attributes:
+id: The unique identifier for the food item.
+name: The name of the food item.
+price: The price of the food item.
+Methods:
+__init__(self, id, name, price): Constructor to initialize the food item with an id, name, and price.
+OrderItem:
+
+Attributes:
+food_item: The FoodItem object associated with this order item.
+quantity: The quantity of the food item.
+Methods:
+__init__(self, food_item, quantity): Constructor to initialize the order item with a food item and quantity.
+Order:
+
+Attributes:
+user: The User object who placed the order.
+items: A list to store the items in the order.
+status: The status of the order (e.g., "Pending", "Placed").
+Methods:
+__init__(self, user): Constructor to initialize the order with a user, an empty items list, and a status of "Pending".
+add_item(self, food_item, quantity): Method to add an item to the order.
+update_item(self, food_item, quantity): Method to update the quantity of an item in the order. If the quantity is zero, remove the item from the order.
+total_price(self): Method to calculate and return the total price of the order.
+place_order(self): Method to place the order, changing the status to "Placed" and adding the order to the user's orders list.
+order_status(self): Method to return the current status of the order.
+After implementing these classes, write unit tests using the pytest framework to verify the functionality of your code. Your test cases should cover the following:
+
+User creation and password verification.
+Setting a new password for a user.
+Creation of a food item.
+Adding items to an order and verifying the order contents.
+Updating the quantity of an item in an order.
+Removing an item from an order.
+Calculating the total price of an order.
+Placing an order and verifying the order status.
+Ensuring the quantity of items in an order is correctly handled.
+Handling an empty order correctly.
+Submission Requirements:
+
+Implement the classes and methods as described.
+Write at least 10 test cases using pytest to ensure the correctness of your implementation.
+Ensure your code is well-documented and follows best practices for readability and maintainability.
+
+
+_______________________________________________________________________________________
+You can refer to the following structure for your test file:
+
+
+import pytest
+from main import User, FoodItem, Order, OrderItem
+
+def test_user_creation():
+    ...
+
+def test_user_set_password():
+    ...
+
+def test_food_item_creation():
+    ...
+
+def test_order_add_item():
+    ...
+
+def test_order_update_item():
+    ...
+
+def test_order_update_item_remove():
+    ...
+
+def test_order_total_price():
+    ...
+
+def test_order_place_order():
+    ...
+
+def test_order_item_quantity():
+    ...
+
+def test_order_empty_order():
+    ...
+
+if __name__ == "__main__":
+    pytest.main()
