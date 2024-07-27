@@ -40,7 +40,7 @@ class Order:
                 break
 
     def total_price(self):
-        return sum(item.food_item.price * item.quantity for item in self.items)
+        return sum(item.food_item.price + item.quantity for item in self.items)
 
     def place_order(self):
         self.status = "Placed"
